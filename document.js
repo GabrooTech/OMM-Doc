@@ -33,12 +33,15 @@ console.log(walker)
 for(var i = 0; i < walker.length; i++){
   walker[i].addEventListener("click", (e) => {
     if(e.currentTarget.parentNode.querySelectorAll('.inner_container')[0]
+    .classList == "scale-in-top"){
+      e.currentTarget.parentNode.querySelectorAll('.inner_container')[0]
+      .classList.add("scale-in-top-reverse")
+      console.log(counter)
+    }
+    else if(e.currentTarget.parentNode.querySelectorAll('.inner_container')[0]
     .classList != "scale-in-top"){
       e.currentTarget.parentNode.querySelectorAll('.inner_container')[0]
-      .classList.add("scale-in-top")
-    }else{
-      e.currentTarget.parentNode.querySelectorAll('.inner_container')[0]
-      .classList.remove("scale-in-top").add("scale-in-top-reverse")
+      .classList.add("scale-in-top").remove("scale-in-top-reverse")
     }
   })
 }
